@@ -30,12 +30,18 @@ export class NeonHelper {
         }
     }
 
-    contractInvoke = async (account: Account, scriptHash: string, operation: string, ...args: any[]) => {
-        const convertedArgs = args.map(a => (
-            a.type === 'Address' && a.value !== undefined
+    convertParams = (args: any[]): any[] => args.map(a => (
+        a.value === undefined ? a :
+            a.type === 'Address'
                 ? sc.ContractParam.hash160(a.value)
-                : a))
+                : a.type === 'ScriptHash'
+                ? sc.ContractParam.hash160(Neon.u.HexString.fromHex(a.value))
+                : a.type === 'Array'
+                    ? sc.ContractParam.array(...this.convertParams(a.value))
+                    : a
+    ))
 
+    contractInvoke = async (account: Account, scriptHash: string, operation: string, ...args: any[]) => {
         const contract = new Neon.experimental.SmartContract(
             Neon.u.HexString.fromHex(scriptHash),
             {
@@ -44,6 +50,9 @@ export class NeonHelper {
                 account: account,
             }
         );
+
+        const convertedArgs = this.convertParams(args)
+
         let resp
         try {
             resp = await contract.invoke(operation, convertedArgs)

@@ -132,7 +132,8 @@ class App extends React.Component<{}> {
         await this.loadAccountFromStorage(storage)
     }
 
-    public login = async () => {
+    public login = async (e: React.SyntheticEvent) => {
+        e.preventDefault()
         await this.passwordOnAccount()
         await this.initClient()
     }
@@ -534,11 +535,15 @@ class App extends React.Component<{}> {
                                     <SButton onClick={this.importAccount}>{`Import`}</SButton>
                                     <SButton onClick={this.createAccount}>{`Create`}</SButton>
                                 </SRow>
-                                {!!accounts.length && (<SRow>
-                                    <SInput type={`password`} onChange={(e: any) => this.setState({accountPassword: e.target.value})}
-                                            placeholder={"Password"}/>
-                                    <SButton onClick={this.login}>{`Login`}</SButton>
-                                </SRow>)}
+                                {!!accounts.length && (
+                                    <form onSubmit={this.login}>
+                                        <SRow>
+                                            <SInput type={`password`} onChange={(e: any) => this.setState({accountPassword: e.target.value})}
+                                                    placeholder={"Password"}/>
+                                            <SButton type="submit">{`Login`}</SButton>
+                                        </SRow>
+                                    </form>
+                                )}
                             </>
                         )
                         : (
