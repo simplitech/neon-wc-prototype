@@ -25,7 +25,7 @@ export default function ConnectToProceed() {
                 You need to connect to your wallet before proceeding
             </Text>
             <WalletIcon boxSize="10rem" color="#004e87" m="2rem"/>
-            <Link color="white" borderRadius="8px" bg="#0094ff" m="0.5rem" p={["0.5rem 1rem", "0.8rem 4rem"]}
+            <Link color="white" bg="#0094ff" m="0.5rem" p={["0.5rem 1rem", "0.8rem 4rem"]}
                   textAlign="center"
                   _hover={{textDecoration: 'none', backgroundColor: '#0081dc'}}
                   onClick={walletConnectCtx?.onConnect}>

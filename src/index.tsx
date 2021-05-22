@@ -16,3 +16,5 @@ ReactDOM.render(
   </>,
   document.getElementById("root"),
 );
+
+document.body.style.overflowX = 'hidden'

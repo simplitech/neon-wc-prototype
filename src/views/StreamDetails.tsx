@@ -288,20 +288,20 @@ export default function StreamDetails() {
             <Text color="#004e87" fontSize="2rem" fontWeight="bold" textAlign="center" mx="1rem">{countdown}</Text>
             <Spacer/>
             <Flex direction="column" w="100%" maxW="26rem" px="1rem">
-                <Link onClick={() => setWithdrawOpen(true)} color="white" borderRadius="0.5rem" bg="#0094ff" mb="1rem"
+                <Link onClick={() => setWithdrawOpen(true)} color="white" bg="#0094ff" mb="1rem"
                       p={["0.4rem", "0.6rem"]}
                       textAlign="center"
                       _hover={{textDecoration: 'none', backgroundColor: '#0081dc'}}>
                     <Text fontSize="1.6rem" m={0}>Withdraw</Text>
                 </Link>
                 <Flex>
-                    <Link onClick={share} color="#0094ff" borderRadius="0.5rem" bg="white" mr="1rem"
+                    <Link onClick={share} color="white" bg="#004e87" mr="1rem"
                           flex="1" p={["0.4rem", "0.6rem"]}
                           textAlign="center"
                           _hover={{textDecoration: 'none', backgroundColor: 'gray.100'}}>
                         <Text fontSize="1.6rem" m={0}>Share</Text>
                     </Link>
-                    <Link onClick={cancelStream} color="white" borderRadius="0.5rem" bg="#004e87"
+                    <Link onClick={cancelStream} color="white" bg="#004e87"
                           flex="1" w="12rem" p={["0.4rem", "0.6rem"]}
                           textAlign="center"
                           _hover={{textDecoration: 'none', backgroundColor: '#550033'}}>

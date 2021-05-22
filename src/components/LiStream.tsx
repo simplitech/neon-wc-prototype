@@ -16,7 +16,7 @@ export default function LiStream(props: { stream: Stream }) {
 
     return (
         <Link to={`/stream/${props.stream.id}`}>
-            <Flex align="center" w="100%" p="0.5rem" bg="white">
+            <Flex align="center" w="100%" p="0.5rem" bg="white" shadow="md">
                 <Text color="#0094ff" fontWeight="bold" fontSize="2rem">
                     #{props.stream.id}
                 </Text>

@@ -73,7 +73,7 @@ export default function Home() {
             If you want to securely pay someone a little bit at a time, Crypsydra is for you
         </Text>
         <Spacer/>
-        <Box borderRadius="8px" bg="#0094ff" m="0.5rem"
+        <Box bg="#0094ff" m="0.5rem"
              _hover={{textDecoration: 'none', backgroundColor: '#0081dc'}}>
             <Link to="/createStream">
                 <Flex align="center" p={["0.5rem 1rem", "1rem 2rem"]}>

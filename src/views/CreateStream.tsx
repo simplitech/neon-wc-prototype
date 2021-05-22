@@ -158,7 +158,7 @@ export default function CreateStream() {
                     value={endDatetime}
                     onChange={(e) => setEndDatetime(e.target.value)}/>
             </FormControl>
-            <Button type="submit" w="100%" maxWidth="35rem" bg="#0094ff" textColor="white" fontSize="2rem" h="4rem"
+            <Button borderRadius={0} type="submit" w="100%" maxWidth="35rem" bg="#0094ff" textColor="white" fontSize="2rem" h="4rem"
                     mb="2rem"
                     _hover={{backgroundColor: '#0081dc'}}>
                 Create

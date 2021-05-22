@@ -1,5 +1,4 @@
 import * as React from "react";
-import WaveIcon from "./icons/WaveIcon";
 import {Flex, Image, Link, Spacer, Spinner, Text, useToast} from "@chakra-ui/react";
 import {useWalletConnect} from "../context/WalletConnectContext";
 import {matchPath, useLocation, Link as RLink} from "react-router-dom";
@@ -40,17 +39,12 @@ export default function Header() {
     }
 
     return (
-        <Flex align="center" borderBottom="4px" borderColor="#0094FF" py="1rem" px={["1rem", "3rem"]}>
+        <Flex align="center" borderBottom="1px" borderColor="#BFD7EB" h={["3.5rem", "6rem"]} px={["1rem", "3rem"]}>
             <RLink to="/">
-                <Flex align="center">
-                    <WaveIcon boxSize={["2rem", "2.5rem"]} mr={["0.3rem", "1rem"]} color="#004e87"/>
-                    <Text display={['none', 'block']} color="#004e87" fontSize="2.2rem" fontWeight="bold">
-                        Crypsydra
-                    </Text>
-                </Flex>
+                <Image src="/logo.svg" alt="Cryptosydra" h={["2rem", "3rem"]} />
             </RLink>
             {!!id && (<>
-                <Text display={['none', 'block']} color="#0094ff" fontWeight="bold" fontSize="1.6rem" mt="0.5rem"
+                <Text display={['none', 'block']} color="#0094ff" fontWeight="bold" fontSize="1.6rem"
                       ml="0.5rem">/stream/{id}</Text>
                 <Link onClick={copyUrl} display={['none', 'block']}>
                     <CopyIcon boxSize="1.4rem" color="#333" ml="0.5rem" mt="0.5rem"/>
